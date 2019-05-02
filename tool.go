@@ -28,8 +28,8 @@ func Execute(args []string) bool {
 		return false
 	}
 	success := false
-	go read(stdout, true, &success)
-	go read(stderr, false, &success)
+	read(stdout, true, &success)
+	read(stderr, false, &success)
 	cmd.Wait()
 	return success
 }
